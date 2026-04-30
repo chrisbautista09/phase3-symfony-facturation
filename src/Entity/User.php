@@ -39,6 +39,37 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $last_name = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $company_name = null;
+
+    #[ORM\Column(length: 34, nullable: true)]
+    private ?string $iban = null;
+
+   
+   public function getIban(): ?string
+    {
+    return $this->iban;
+    }
+
+    public function setIban(?string $iban): static
+    {
+    $this->iban = $iban;
+
+    return $this;
+    }
+   
+    public function getCompanyName(): ?string
+    {
+    return $this->company_name;
+    }
+
+    public function setCompanyName(string $company_name): static
+    {
+    $this->company_name = $company_name;
+
+    return $this;
+    }
+   
     public function getId(): ?int
     {
         return $this->id;

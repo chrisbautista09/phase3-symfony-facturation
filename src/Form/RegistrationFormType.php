@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType; // ✅ À utiliser
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +18,26 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', TextType::class, [
+                'label' => 'Adresse Email',
+                'attr' => ['placeholder' => 'contact@entreprise'] // Optionnel : pour ajouter un indice
+            ])
+            ->add('first_name', TextType::class, [
+                'label' => 'Prénom',
+                'attr' => ['placeholder' => ' Antoine'] // Optionnel : pour ajouter un indice
+            ])
+            ->add('last_name', TextType::class, [
+                'label' => 'Nom',
+                'attr' => ['placeholder' => ' Dupont'] // Optionnel : pour ajouter un indice
+            ])
+            ->add('company_name', TextType::class, [
+                'label' => 'Raison Sociale',
+                'attr' => ['placeholder' => ' Tech Solutions'] // Optionnel : pour ajouter un indice
+            ])
+            ->add('iban', TextType::class, [
+                'label' => 'IBAN',
+                'attr' => ['placeholder' => 'FR76 1234 5678 9012 3456 7890 123'] // Optionnel : pour ajouter un indice
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                                 'mapped' => false,
                 'constraints' => [
