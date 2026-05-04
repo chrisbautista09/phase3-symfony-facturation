@@ -5,6 +5,108 @@
 {% block body %}
 
 
-<div class="flex"></div>
+<div class="flex flex-row ">
+    <div class=" NavBar bg-green-500 w-1/5 flex flex-col items-start hover:bg-gray-400 gap-4">
+   
+        <h1 class="font-bold ">
+             FacturSaas
+        </h1>
+    
+
+        <div class="flex flex-col w-full  hover:bg-gray-400 gap-2">
+                <button class="bg-gray-300 text-left p-2 gap-2 rounded-xl cursor-pointer hover:bg-blue-200">
+                    Dasboard
+                </button>
+                <button class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+                    Factures
+                </button>
+                <button class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+
+                     Clients
+                </button>
+                <button class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+
+                    Produits
+                </button>
+                <button class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+
+                    Profil
+                </button>
+        </div>
+        <div>
+                <p>
+                    Tech Solutions
+                </p>
+                <p>
+                    Contact@entreprise.fr
+                </p>
+                <button class="bg-gray-300 text-left cursor-pointer p-2 gap-2 rounded-2xl hover:bg-blue-200">
+                     Déconnexion
+                </button>
+        </div>
+
+
+    </div>
+
+    <div class=" w-4/5 flex flex-col">
+        <div class="bg-green-300 flex flex-col">
+            <h1 class="font-bold rounded-2xl gap-4 "> 
+                Dasboard
+            </h1> 
+            <div class="statistique grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+                <div class="bg-gray-300 rounded-2xl">
+                    <p>
+                        Chriffre d'affaires (Payé)
+                    </p>
+                    <p>
+                        2250€
+                    </p>
+                </div>
+                <div class="bg-gray-300 rounded-2xl">
+                    <p>
+                        Factures en attente de paiement
+                    </p>
+                    <p>
+                        2
+                    </p>
+                </div>
+                <div class="bg-gray-300 rounded-2xl">
+                    <p>
+                        Total Clients
+                    </p>
+                    <p>
+                        4
+                    </p>
+                </div>
+                <div class="bg-gray-300 rounded-2xl">
+                    <p>
+                        Total Produits 
+                    </p>
+                    <p>
+                        3
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <p>
+                    Chiffres d'affaires mensuel (Factures payées)
+                </p>
+               
+                <img src="{{ asset ('image/v2osk-1Z2niiBPg5A-unsplash.jpg')}}" alt="graphique"
+                class="w-128 h-auto">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-amber-400">
+             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer une facture <br> Nouvelle prestation</button>
+             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Ajouter un client <br> Gérer le répertoire</button>
+             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer un produit / service <br> Enrichir le catalogue pour rediger rapidement vos factures</button>
+             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Relance tous les clients <br> Envoyer un mail à tout les clients en retard de paiement</button>
+    
+        </div>
+    </div>
+
+
+</div>
 
 {% endblock %}
