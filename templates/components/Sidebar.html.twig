@@ -1,49 +1,85 @@
 <div
-    class="sideBar bg-green-500 w-1/5 flex flex-col items-start hover:bg-gray-400 gap-4"
+    class="sideBar bg-white w-1/5 flex flex-col items-start gap-4 h-screen"
     {{attributes}}
 >
-    <h1 class="font-bold text-xl">FacturSaas</h1>
-
-    <div class="flex flex-col w-full hover:bg-gray-400 gap-2">
-        <a
-            href="{{ path('app_dashboard') }}"
-            class="bg-gray-300 text-left p-2 gap-2 rounded-xl cursor-pointer hover:bg-blue-200"
-        >
-            Dashboard
-        </a>
-        <a
-            href="#"
-            class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
-        >
-            Factures
-        </a>
-        <a
-            href="#"
-            class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
-        >
-            Clients
-        </a>
-        <a
-            href="#"
-            class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
-        >
-            Produits
-        </a>
-        <a
-            href="#"
-            class="bg-gray-300 text-left p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
-        >
-            Profil
-        </a>
+    <div class="flex flex-row items-center w-full gap-2 pt-4 pl-4 shrink-0">
+        {{ ux_icon("lucide:receipt", { class: "w-6 h-6   text-[#155DFC]" }) }}
+        <h1 class="font-bold font-arimo text-xl text-[#155DFC]">FacturSaas</h1>
     </div>
-    <div>
-        <p>Tech Solutions</p>
-        <p>Contact@entreprise.fr</p>
-        <a
-            href="{{ path('app_logout') }}"
-            class="bg-gray-300 text-left cursor-pointer p-2 gap-2 rounded-2xl hover:bg-blue-200"
+    <div class="flex flex-col w-full gap-2">
+        <nav
+            class="flex flex-col items-start gap-2 pt-4 pl-4 w-full grow overflow-y-auto"
         >
-            Déconnexion
-        </a>
+            <a
+                href="{{ path('app_dashboard') }}"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-xl cursor-pointer hover:bg-[#EFF6FF] border-[#4A5565]"
+            >
+                {{
+                    ux_icon("lucide:layout-dashboard", {
+                        class: "w-6 h-6",
+                    })
+                }}
+                Dashboard
+            </a>
+            <a
+                href="#"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+            >
+                {{
+                    ux_icon("lucide:file-text", {
+                        class: "w-6 h-6",
+                    })
+                }}
+                Factures
+            </a>
+            <a
+                href="#"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+            >
+                {{
+                    ux_icon("lucide:users-round", {
+                        class: "w-6 h-6",
+                    })
+                }}
+                Clients
+            </a>
+            <a
+                href="#"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+            >
+                {{
+                    ux_icon("lucide:package", {
+                        class: "w-6 h-6 ",
+                    })
+                }}
+                Produits
+            </a>
+            <a
+                href="#"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+            >
+                {{
+                    ux_icon("lucide:settings", {
+                        class: "w-6 h-6 ",
+                    })
+                }}
+                Profil
+            </a>
+        </nav>
+        <div class="w-full p-4 shrink-0">
+            <p class="font-bold">Tech Solutions</p>
+            <p>Contact@entreprise.fr</p>
+            <a
+                href="{{ path('app_logout') }}"
+                class="grid grid-cols-[auto_1fr] w-full text-red-500 text-left hover:text-[#155DFC] cursor-pointer p-2 gap-2 rounded-2xl hover:bg-blue-200"
+            >
+                {{
+                    ux_icon("lucide:log-out", {
+                        class: "w-6 h-6  text-red-500",
+                    })
+                }}
+                Déconnexion
+            </a>
+        </div>
     </div>
 </div>

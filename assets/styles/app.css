@@ -1,5 +1,10 @@
 @import "tailwindcss";
+@import "tailwindcss/prefligt";
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
+
+@tailwind utilities;
 
 body {
     background-color: skyblue;
+    font-family: "Arimo", sans-serif;
 }
