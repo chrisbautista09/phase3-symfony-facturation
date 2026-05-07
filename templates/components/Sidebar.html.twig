@@ -1,5 +1,5 @@
 <div
-    class="sideBar bg-white w-1/5 flex flex-col items-start gap-4 h-screen"
+    class="sideBar bg-gray-50 w-1/5 flex flex-col items-start gap-4 min-h-screen"
     {{attributes}}
 >
     <div class="flex flex-row items-center w-full gap-2 pt-4 pl-4 shrink-0">
@@ -23,7 +23,7 @@
             </a>
             <a
                 href="#"
-                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-[#EFF6FF]"
             >
                 {{
                     ux_icon("lucide:file-text", {
@@ -34,7 +34,7 @@
             </a>
             <a
                 href="#"
-                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-[#EFF6FF]"
             >
                 {{
                     ux_icon("lucide:users-round", {
@@ -45,7 +45,7 @@
             </a>
             <a
                 href="#"
-                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-[#EFF6FF]"
             >
                 {{
                     ux_icon("lucide:package", {
@@ -56,7 +56,7 @@
             </a>
             <a
                 href="#"
-                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200"
+                class="grid grid-cols-[auto_1fr] w-full text-left hover:text-[#155DFC] p-2 gap-2 rounded-2xl cursor-pointer hover:bg-[#EFF6FF]"
             >
                 {{
                     ux_icon("lucide:settings", {
@@ -66,12 +66,21 @@
                 Profil
             </a>
         </nav>
-        <div class="w-full p-4 shrink-0">
-            <p class="font-bold">Tech Solutions</p>
-            <p>Contact@entreprise.fr</p>
+        <div class="w-full p-4 shrink-0 fixed bottom-6">
+            <div class="flex flex-row">
+                <p
+                    class="rounded-full bg-blue-100 w-10 h-10 text-blue-500 flex items-center justify-center font-bold"
+                >
+                    JD
+                </p>
+                <div class="pl-6">
+                    <p class="font-bold">Tech Solutions</p>
+                    <p>Contact@entreprise.fr</p>
+                </div>
+            </div>
             <a
                 href="{{ path('app_logout') }}"
-                class="grid grid-cols-[auto_1fr] w-full text-red-500 text-left hover:text-[#155DFC] cursor-pointer p-2 gap-2 rounded-2xl hover:bg-blue-200"
+                class="grid grid-cols-[auto_1fr] w-full text-red-500 text-left hover:text-[#155DFC] cursor-pointer p-2 gap-2 rounded-2xl hover:bg-[#EFF6FF]"
             >
                 {{
                     ux_icon("lucide:log-out", {
