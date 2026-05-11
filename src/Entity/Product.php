@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Enum\UnitEnum;
+use App\Entity\User;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -28,10 +29,11 @@ class Product
     #[ORM\Column(enumType: UnitEnum::class)]
     private ?UnitEnum $UnitEnum = null;
 
-    #[ORM\ManyToOne(inversedBy: 'invoices')]
+    #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?InvoiceItem $user = null;
-  
+    private ?User $user = null;
+
+     
     public function getId(): ?int
     {
         return $this->id;
@@ -86,16 +88,18 @@ class Product
         return $this;
     }
 
-    public function getUser(): ?InvoiceItem
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?InvoiceItem $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 
         return $this;
     }
+
+ 
 
 }

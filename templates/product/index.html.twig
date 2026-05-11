@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+<div class="flex flex-row">
+    
+        <twig:Sidebar />
+    
+    <div class="p-6 w-4/5 bg-gray-50">
+        <div class="flex flex-row justify-between">
+            <h1 class="font-bold text-2xl p-4">Produits & services</h1>
+            <a class="flex items-center gap-2 p-4 bg-blue-500 rounded-2xl text-white hover:bg-blue-600 transition-colors" href="{{ path('app_product_new') }}">
+                {{ ux_icon("lucide:plus", { class: "w-6 h-6" }) }}
+                <span>Ajouter un produit</span>
+            </a>
+        </div>
+        <div class="pl-6">
+            <table class="ml-6 table w-full h-6 bg-white rounded-2xl">
+                <thead class="gap-4">
+                    <tr class="border-b-2 border-black">
+                        <th class="text-left w-[20%] py-4">Nom</th>
+                        <th class="text-left w-[30%] py-4">Description</th>
+                        <th class="text-left w-[30%] py-4">Prix unitaires</th>
+                        <th class="text-left w-[20%] py-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr class="table-fixed">
+                        <td class="w-2/10 py-4">{{ product.name }}</td>
+                        <td class="w-3/10 py-4">{{ product.description }}</td>
+                        <td class="w-3/10 py-4">{{ product.price }}, {{ product.UnitEnum.getLabel }}</td>
+                        <td class="w-2/10 py-4 flex flex-row gap-4">
+                            <a class="text-blue-500" href="{{ path('app_product_show', {'id': product.id}) }}">
+                                {{ ux_icon("lucide:pencil", { class: "w-6 h-6" }) }}
+                            </a>
+                            <a class="text-red-500" href="{{ path('app_product_edit', {'id': product.id}) }}">
+                                {{ ux_icon("lucide:trash-2", { class: "w-6 h-6" }) }}
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
