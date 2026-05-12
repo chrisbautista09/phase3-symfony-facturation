@@ -1,4 +1,17 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="space-y-4">
+        {{ form_row(form.name) }}
+        {{ form_row(form.description) }}
+        
+        <div class="flex gap-4">
+            <div class="w-1/2">{{ form_row(form.price) }}</div>
+            <div class="w-1/2">{{ form_row(form.UnitEnum) }}</div>
+        </div>
+
+        {# Le champ User est souvent caché ou automatique #}
+        {{ form_row(form.user) }} 
+
+        <button type="submit" class="bg-white text-black p-2 rounded">Annuler</button>
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded">Enregistrer</button>
+    </div>
 {{ form_end(form) }}
