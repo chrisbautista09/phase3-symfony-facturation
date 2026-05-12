@@ -1,17 +1,36 @@
 {{ form_start(form) }}
-    <div class="space-y-4">
-        {{ form_row(form.name) }}
-        {{ form_row(form.description) }}
-        
-        <div class="flex gap-4">
-            <div class="w-1/2">{{ form_row(form.price) }}</div>
-            <div class="w-1/2">{{ form_row(form.UnitEnum) }}</div>
-        </div>
-
-        {# Le champ User est souvent caché ou automatique #}
-        {{ form_row(form.user) }} 
-
-        <button type="submit" class="bg-white text-black p-2 rounded">Annuler</button>
-        <button type="submit" class="bg-blue-500 text-white p-2 rounded">Enregistrer</button>
+<div class="space-y-4">
+    <div class="flex flex-col">
+        {{form_label(form.name,null,{ 'label_attr': {class: 'text-gray-600'}})}}
+        {{form_widget(form.name,{attr: {class: 'h-10 border-2 border-gray-300 rounded-xl'}})}}
     </div>
+   
+  
+    <div class="flex flex-col gap-4 pb-6">
+        <div class="">
+                {{form_label(form.description,null,{ 'label_attr': {class: 'text-gray-600'}})}}
+                {{form_widget(form.description,{attr: {class: 'h-20  border-2 border-gray-300 rounded-xl w-full'}})}}</div>
+        <div class="flex flex-row">
+            <div class="flex flex-col w-1/2 pr-4">
+                {{form_label(form.price,null,{ 'label_attr': {class: 'text-gray-600'}})}}
+                {{form_widget(form.price,{attr: {class: 'h-10 border-2 border-gray-300 rounded-xl'}})}}
+            </div>
+            <div class="flex flex-col w-1/2">
+                {{form_label(form.UnitEnum,null,{ 'label_attr': {class: 'text-gray-600'}})}}
+                {{form_widget(form.UnitEnum,{attr: {class: 'h-10 border-2 border-gray-300 rounded-xl'}})}}
+            </div>
+        </div>    
+    </div>
+
+    <div class="text-right">
+        <a
+            href="{{ path('app_product_index') }}"
+            class="bg-white text-black w-1/3 p-3 text-center rounded border border-gray-300 inline-block"
+            >Annuler</a
+        >
+        <button type="submit" class=" w-1/3 p-3 bg-blue-500 text-white rounded">
+            Enregistrer
+        </button>
+    </div>
+</div>
 {{ form_end(form) }}

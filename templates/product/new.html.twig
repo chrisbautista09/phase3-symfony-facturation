@@ -3,9 +3,16 @@
 {% block title %}Ajouter un produit{% endblock %}
 
 {% block body %}
-    <h1 class="font-bold">Ajouter un nouveau produit</h1>
 
-    {{ include('product/_form.html.twig') }}
+<div class=" flex flex-row">
 
-    <a href="{{ path('app_product_index') }}">annuler</a>
+        <twig:Sidebar />
+    <div class="w-4/5 flex flex-col items-center h-screen bg-gray-100">
+        <h1 class="py-6 font-bold text-3xl ">AJOUTER UN NOUVEAU PRODUIT</h1>
+        <div class="p-6 w-130 rounded-2xl bg-white ">
+            <h2 class="pb-6 font-bold text-xl">Nouveau Produit</h2>
+            {{ include('product/_form.html.twig') }}
+        </div>
+    </div>
+</div>
 {% endblock %}
