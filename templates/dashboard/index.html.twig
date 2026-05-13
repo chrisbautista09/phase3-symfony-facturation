@@ -62,7 +62,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-amber-400">
              <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer une facture <br> Nouvelle prestation</button>
              <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Ajouter un client <br> Gérer le répertoire</button>
-             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer un produit / service <br> Enrichir le catalogue pour rediger rapidement vos factures</button>
+             <a href="{{path ('app_product_new')}}" 
+                class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+                Créer un produit / service <br> Enrichir le catalogue pour rediger rapidement vos factures
+             </a>
              <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Relance tous les clients <br> Envoyer un mail à tout les clients en retard de paiement</button>
     
         </div>
