@@ -100,24 +100,24 @@ class Invoice
         return $this;
     }
 
-    public function getClientId(): ?Client
+    public function getClient(): ?Client
     {
         return $this->client;
     }
 
-    public function setClientId(?Client $client): static
+    public function setClient(?Client $client): static
     {
         $this->client = $client;
 
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUserId(?User $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 

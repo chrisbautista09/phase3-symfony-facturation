@@ -56,12 +56,15 @@
                 </p>
                
                 <img src="{{ asset ('image/v2osk-1Z2niiBPg5A-unsplash.jpg')}}" alt="graphique"
-                class="w-128 h-auto">
+                class="w-lg h-auto">
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-amber-400">
-             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer une facture <br> Nouvelle prestation</button>
-             <button class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Ajouter un client <br> Gérer le répertoire</button>
+             <a href="{{path ('app_invoice_new')}}" class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">Créer une facture <br> Nouvelle prestation</a>
+             <a href="{{path ('app_client_new')}}" 
+                class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
+                Ajouter un client <br> Gérer le répertoire
+            </a>
              <a href="{{path ('app_product_new')}}" 
                 class="bg-gray-300 p-2 gap-2 rounded-2xl cursor-pointer hover:bg-blue-200">
                 Créer un produit / service <br> Enrichir le catalogue pour rediger rapidement vos factures
